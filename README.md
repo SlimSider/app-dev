@@ -39,7 +39,7 @@ coming soon
 
 ## Fejlesztői környezet
 + git verziókezelő telepítése
-+ Projekt klónozása lokális gépre: git clone https://github.com/kissLevi/alkfejlBeadando.git
++ Projekt klónozása lokális gépre: git clone https://github.com/SlimSider/app-dev.git
 + IntelliJ vagy NetBeans használata
 + Projekt megnyitása
 + NetBeans esetén pom.xml jobb-klikk: Run maven/Goals/spring-boot:run
