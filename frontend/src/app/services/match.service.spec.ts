@@ -33,4 +33,27 @@ describe('IssueService', () => {
       });
   }));
 
+  it('should update the given match', inject([MatchService], (service: MatchService) => {
+    service
+      .getMatches()
+      .subscribe(matches => {
+        const match = new Match("home_updated", "away", true, 1, 1, 0, 0, null, 10);
+
+        service.update(match);
+
+        expect(matches[0]).toBe(match);
+      });
+  }));
+
+  it('should delete the given match', inject([MatchService], (service: MatchService) => {
+    service
+      .getMatches()
+      .subscribe(matches => {
+
+        service.delete(10);
+
+        expect(matches.length).toBe(0);
+      });
+  }));
+
 });
