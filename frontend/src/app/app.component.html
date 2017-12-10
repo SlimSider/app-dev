@@ -1,20 +1,4 @@
-<nav class="navbar navbar-expand navbar-dark bg-dark">
-  <span class="navbar-brand h1 mb-0">Easybet</span>
-  <ul class="navbar-nav mr-auto">
-    <li class="nav-item" routerLinkActive="active">
-      <a class="nav-link" routerLink="/home">Home</a>
-    </li>
-    <li class="nav-item" routerLinkActive="active">
-      <a class="nav-link" routerLink="/settings">Settings</a>
-    </li>
-  </ul>
-  <ul class="navbar-nav ml-auto">
-    <li class="nav-item" routerLinkActive="active">
-      <a class="nav-link" routerLink="/login">Login</a>
-    </li>
-    <li class="nav-item" routerLinkActive="active">
-      <a class="nav-link" routerLink="/register">Register</a>
-    </li>
-  </ul>
-</nav>
-<router-outlet></router-outlet>
+<div id="page-wrapper">
+  <app-menu></app-menu>
+  <router-outlet></router-outlet>
+</div>

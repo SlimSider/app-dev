@@ -1,0 +1,44 @@
+<div class="page-body">
+    <h2 class="mat-h2">New Match</h2>
+    <form [formGroup]="eventForm" novalidate>
+
+     <mat-form-field>
+      <mat-select placeholder="Event type" formControlName="type">
+        <mat-option value="WINNER">Winner</mat-option>
+        <mat-option value="HT_WINNER">Halftime winner</mat-option>
+        <mat-option value="MGS_OVERT">Over 2.5 mgs</mat-option>
+      </mat-select>
+      </mat-form-field>
+
+      <div class="form-control">
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="1" formControlName="home">
+          <mat-error *ngIf="home.hasError('required')">
+            Home team is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+      </div>
+  
+      <div class="form-control">
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="X" formControlName="draw">
+          <mat-error *ngIf="away.hasError('required')">
+            Away team is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+      </div>
+      
+      <div class="form-control">
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="2" formControlName="away">
+          <mat-error *ngIf="away.hasError('required')">
+            Away team is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+      </div>
+  
+      <button mat-raised-button class="mat-primary" (click)="submit()" [disabled]="!eventForm.valid">Create</button>
+      <a mat-button class="mat-accent" routerLink="/match">Back</a>
+    </form>
+  </div>
+  

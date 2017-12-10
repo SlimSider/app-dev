@@ -1,0 +1,51 @@
+<div class="page-body">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title><h1 class="mat-h1">{{match.home}} vs {{match.away}}</h1></mat-card-title>
+
+      <mat-card-subtitle>
+          <form [formGroup]="updateForm" novalidate>
+              <mat-slide-toggle formControlName="isActive">Final time</mat-slide-toggle>
+              <div class="form-control">
+                <mat-form-field class="example-full-width">
+                    <input matInput placeholder="Home team score" formControlName="home_score">
+                  <mat-error *ngIf="home_score.hasError('required')">
+                    Home team score is <strong>required</strong>
+                  </mat-error>
+                </mat-form-field>
+              </div>
+          
+              <div class="form-control">
+                <mat-form-field class="example-full-width">
+                    <input matInput placeholder="Away team score" formControlName="away_score">
+                  <mat-error *ngIf="away_score.hasError('required')">
+                    Away team score is <strong>required</strong>
+                  </mat-error>
+                </mat-form-field>
+              </div>
+
+              <div class="form-control">
+                <mat-form-field class="example-full-width">
+                    <input matInput placeholder="Home team halftime score" formControlName="ht_home_score">
+                  <mat-error *ngIf="away_score.hasError('required')">
+                    Home team halftime score is <strong>required</strong>
+                  </mat-error>
+                </mat-form-field>
+              </div>
+
+              <div class="form-control">
+                <mat-form-field class="example-full-width">
+                    <input matInput placeholder="Away team halftime score" formControlName="ht_away_score">
+                  <mat-error *ngIf="away_score.hasError('required')">
+                    Away team halftime score is <strong>required</strong>
+                  </mat-error>
+                </mat-form-field>
+              </div>
+          
+              <button mat-raised-button class="mat-primary" (click)="updateStatus()" [disabled]="!updateForm.valid">Submit</button>
+              <a mat-button class="mat-accent" routerLink="/match">Back</a>
+            </form>
+      </mat-card-subtitle>
+    </mat-card-header>
+  </mat-card>
+</div>

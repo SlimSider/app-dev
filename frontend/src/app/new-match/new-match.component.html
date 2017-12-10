@@ -1,0 +1,25 @@
+<div class="page-body">
+  <h2 class="mat-h2">New Match</h2>
+  <form [formGroup]="matchForm" novalidate>
+    <div class="form-control">
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Home team" formControlName="home">
+        <mat-error *ngIf="home.hasError('required')">
+          Home team is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+    </div>
+
+    <div class="form-control">
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Away team" formControlName="away">
+        <mat-error *ngIf="away.hasError('required')">
+          Away team is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+    </div>
+
+    <button mat-raised-button class="mat-primary" (click)="submit()" [disabled]="!matchForm.valid">Create</button>
+    <a mat-button class="mat-accent" routerLink="/match">Back</a>
+  </form>
+</div>

@@ -1,0 +1,45 @@
+<div class="page-body">
+  <h2 class="mat-h2">Matches</h2>
+  <div *ngIf="user.role==='ADMIN'">  
+    <a mat-raised-button routerLink="/match/new" class="mat-primary">Add new match</a>
+  </div>
+
+  <mat-table #table [dataSource]="matches">
+    <ng-container matColumnDef="home">
+      <mat-header-cell *matHeaderCellDef> Home team</mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.home}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="away">
+      <mat-header-cell *matHeaderCellDef> Away team</mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.away}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="isActive">
+      <mat-header-cell *matHeaderCellDef> Status</mat-header-cell>
+      <mat-cell *matCellDef="let element">{{element.isActive?"On Going":"Finished"}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="ht_score">
+      <mat-header-cell *matHeaderCellDef> Halftime score</mat-header-cell>
+      <mat-cell *matCellDef="let element">{{element.htHomeScore>=0?element.htHomeScore+' : '+element.htAwayScore:""}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="score">
+      <mat-header-cell *matHeaderCellDef> Final score</mat-header-cell>
+      <mat-cell *matCellDef="let element">{{element.homeScore>=0?element.homeScore+' : '+element.awayScore:""}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="edit">
+      <mat-header-cell *matHeaderCellDef> {{user.role==='ADMIN'?'Actions':''}}</mat-header-cell>
+      <mat-cell *matCellDef="let element">
+        <a mat-button [routerLink]="'/event/' + element.id">See events</a>
+        <a mat-button [routerLink]="'/match/' + element.id" *ngIf="user.role==='ADMIN'">Edit</a>
+        <button mat-button *ngIf="user.role==='ADMIN'" (click)="delete(element.id)" class="mat-accent">Delete</button>
+      </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
+</div>

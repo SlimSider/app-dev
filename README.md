@@ -17,13 +17,12 @@ Az oldal célja, hogy magas színvonalú játékot és vonzó fogadásokat kín�
 + Ajánlatok böngészése
 + Regisztráció
 + Bejelentkezés, kijelentkezés
-+ Egyenleg feltöltése
++ Meccs kiírása
++ Meccs módosítása, törlése
 + Esemény kiírása
 + Esemény lezárása, kiértékelése
-+ Kiszallitas teljesitese
-+ Esemény törlése
-+ Esemény módosítása
-+ Felhasználók módosítása és törlése
++ Esemény módosítása, törlése
++ Eseményre fogadás
 
 ## Adatbázis diagram
 coming soon
@@ -33,17 +32,17 @@ coming soon
 | ------ | ----------- |
 | Látogató   | Böngészheti a kiírt eseményeket. |
 | Felhasználó | Fogadhat a kiírt eseményekre. Kiértékelés után jóváírhatják a nyereményt, vagy levonhatják a tétet az egyenlegéről |
-| Admin    | Kiírhat, lezárhat eseményeket, illetve törtölheti és módosíthatja is azokat. Felhasználók profiljait is modósíthatja, törölheti |
+| Admin    | Kiírhat, lezárhat meccseket, eseményeket, illetve törtölheti és módosíthatja is azokat. |
 
 ## Könyvtárstruktúra (backend)
 
 ## Fejlesztői környezet
 + git verziókezelő telepítése
 + Projekt klónozása lokális gépre: git clone https://github.com/SlimSider/app-dev.git
-+ IntelliJ vagy NetBeans használata
-+ Projekt megnyitása
-+ NetBeans esetén pom.xml jobb-klikk: Run maven/Goals/spring-boot:run
-+ localhost:8080 böngészőben
++ Tetszőleges fejlesztő környezet
++ Command line - 1 : mvnw spring-boot:run
++ Command line - 2 : cd frontend | npm start 
++ localhost:4200 böngészőben
 
 ## Végpont tervek és leírások
 coming soon
