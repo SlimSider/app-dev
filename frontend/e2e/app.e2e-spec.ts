@@ -7,8 +7,22 @@ describe('issue-tracker App', () => {
     page = new AppPage();
   });
 
-  it('should display welcome message', () => {
-    page.navigateTo();
-    expect(page.getParagraphText()).toEqual('Welcome to app!');
-  });
+  it('should add entered match', () => {
+
+      page.navigateToMatches();
+      const initialMatchCount = page.getMatchCount();
+
+      page.navigateToNewMatch();
+      const button = page.getCreateButton();
+
+      const homeInput = page.getHomeInput();
+      const awayInput = page.getAwayInput();
+      homeInput.sendKeys('home');
+      awayInput.sendKeys('away');
+
+      button.click();
+      expect(page.getMatchCount()).toBeGreaterThan(initialMatchCount);
+
+    });
+
 });

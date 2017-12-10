@@ -1,0 +1,22 @@
+p, h1 {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+
+p {
+  font-size: 150%;
+}
+
+h1 {
+  font-size: 200%;
+}
+
+.center {
+    position: absolute;
+    width: 110%;
+    height: 17%;
+    top: 10%;
+    left: -5%;
+    margin: 0%;
+    border: 1px solid lightgrey;
+}
