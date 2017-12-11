@@ -25,7 +25,7 @@ Az oldal célja, hogy magas színvonalú játékot és vonzó fogadásokat kín�
 + Eseményre fogadás
 
 ## Adatbázis diagram
-coming soon
+![diagram](images/abdiag.png)
 
 ## Szerepkörök
 | Szereplő |  |
