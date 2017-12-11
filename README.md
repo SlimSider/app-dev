@@ -1,7 +1,7 @@
 # EasyBet - Online sportfogadó alkalmazás
 ---
 ## Az alkalmazás rövid leírása
-Az oldalra az adminok feltölthetnek sport mérkőzéseket és hozzájuk kapcsolódó fogadási eseményeket, melyekre a regisztrált felhasználók virtuális pénzzel tudnak fogadni. Az adott meccs vegeztélvel az admin lezárja a hozzá létrehozott eseményeket, így az arra vonatkozó fogadások kiértékelődnek. 
+Az oldalra az adminok feltölthetnek sport mérkőzéseket és hozzájuk kapcsolódó fogadási eseményeket, melyekre a regisztrált felhasználók virtuális pénzzel tudnak fogadni. Az adott meccs vegeztélvel az admin lezárja a hozzá létrehozott eseményeket, így az arra vonatkozó fogadások kiértékelődnek.
 
 ## Tartalomjegyzék
 + Funkcionális követelmények
@@ -41,11 +41,11 @@ coming soon
 + Projekt klónozása lokális gépre: git clone https://github.com/SlimSider/app-dev.git
 + Tetszőleges fejlesztő környezet
 + Command line - 1 : mvnw spring-boot:run
-+ Command line - 2 : cd frontend | npm start 
++ Command line - 2 : cd frontend | npm start
 + localhost:4200 böngészőben
 
 ## Végpont tervek és leírások
 coming soon
- 
+
 ## Végpont szekvenciadiagram
 coming soon
