@@ -6,9 +6,6 @@ import org.springframework.stereotype.Service;
 import hu.elte.easybet.model.Bet;
 import hu.elte.easybet.repository.BetRepository;
 
-/**
- * @author Godzsák Dávid <godzsakdavid@gmail.com>
- */
 @Service
 public class BetService {
 
@@ -21,6 +18,7 @@ public class BetService {
 
 
     public Bet create(Bet bet) {
+        System.out.println(bet.toString());
         if(betRepository.findById(bet.getId()).isPresent()){
             
         }

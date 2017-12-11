@@ -37,4 +37,8 @@ export class MenuComponent implements OnInit {
       this.common = this.roleMenus.get(Role.GUEST)
     }
   }
+
+  logout() {
+    this.authService.logout();
+  }
 }

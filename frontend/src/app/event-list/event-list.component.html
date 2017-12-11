@@ -2,7 +2,7 @@
     <div *ngIf="user.role==='ADMIN'">  
         <a mat-raised-button [routerLink]="['new']" class="mat-primary">Add new event</a>
       </div>
-    <div *ngFor="let e of events">
+    <div *ngFor="let e of events; let i = index">
       <mat-card class="example-card">
         <mat-card-header>
           <mat-card-title>{{e.match.home+' - '+e.match.away}}</mat-card-title>
@@ -10,20 +10,14 @@
         </mat-card-header>
         <mat-card-content>
           <p>
-            <button mat-button (click)="onReady($event.target)" value={{e.homeOdds}}>{{e.homeOdds}}</button>
-            <button mat-button (click)="onReady($event.target)" value={{e.drawOdds}}>{{e.drawOdds}}</button>
-            <button mat-button (click)="onReady($event.target)" value={{e.awayOdds}}>{{e.awayOdds}}</button>
+            <button mat-button (click)="onBet($event.target)" value={{i}} name={{e.homeOdds}}>{{e.homeOdds}}</button>
+            <button mat-button (click)="onBet($event.target)" value={{i}} name={{e.drawOdds}}>{{e.drawOdds}}</button>
+            <button mat-button (click)="onBet($event.target)" value={{i}} name={{e.awayOdds}}>{{e.awayOdds}}</button>
           </p>
         </mat-card-content>
         <div *ngIf="user.role==='ADMIN' || user.role==='USER' ">
           <mat-card-actions>
-            <button mat-button (click)="delete(element.id)" class="mat-accent">Delete</button>
-            <div *ngIf="ready">
-              <mat-form-field>
-                <input matInput [(ngModel)]="amount" placeholder="Stake">
-              </mat-form-field>
-              <button mat-button (click)="onBet()">Bet</button>
-            </div>
+            <button mat-button (click)="delete(i)" class="mat-accent">Delete</button>
           </mat-card-actions>
         </div>
       </mat-card>

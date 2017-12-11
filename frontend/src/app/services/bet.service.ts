@@ -4,7 +4,7 @@
     import {Observable} from 'rxjs/Observable';
     import 'rxjs/add/operator/map';
     import { Bet } from '../model/Bet';
-import { Event } from '@angular/router/src/events';
+    import { Event } from '../model/Event';
     
     @Injectable()
     export class BetService {

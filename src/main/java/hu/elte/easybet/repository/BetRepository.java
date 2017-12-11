@@ -6,9 +6,6 @@ import org.springframework.stereotype.Repository;
 
 import java.util.Optional;
 
-/**
- * @author Godzsák Dávid <godzsakdavid@gmail.com>
- */
 @Repository
 public interface BetRepository extends CrudRepository<Bet, Long> {
     Optional<Bet> findById(Long id);

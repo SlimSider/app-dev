@@ -30,6 +30,7 @@ public class BetApiController {
     @PostMapping
     private ResponseEntity<Bet> create(@RequestBody Bet bet) {
         Bet saved = betService.create(bet);
+        System.out.println(saved);
         return ResponseEntity.ok(saved);
     }
 

@@ -1,3 +1,17 @@
-<p>
-  new-bet works!
-</p>
+<form [formGroup]="betForm" novalidate>
+        <div *ngIf="betService.event.match">
+          You choosed: {{betService.event.match.home+' - '+betService.event.match.away+' odds:'+betService.selected}}
+        </div>
+
+        <div class="form-control">
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="Stake" formControlName="stake">
+            <!-- <mat-error *ngIf="stake.hasError('required')">
+              Stake is <strong>required</strong>
+            </mat-error> -->
+          </mat-form-field>
+        </div>
+    
+        <button mat-raised-button class="mat-primary" (click)="finish()" [disabled]="!betForm.valid">Finish</button>
+        <a mat-button class="mat-accent" routerLink="/match">Back</a>
+      </form>

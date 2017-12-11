@@ -3,19 +3,19 @@ import { Event } from './Event';
 
 export class Bet {
     id: number;
-    isActive: boolean;
+    active: boolean;
     winner: boolean;
     stake: number;
     winnableStake: number;
-    users: Array<User>;
+    user: User;
     connectedEvent: Event;
 
-    constructor(isActive?: boolean, winner?: boolean, stake?: number, winnableStake?: number, users?: Array<User>, connectedEvent?: Event, id?: number) {
-        this.isActive = isActive;
+    constructor(active?: boolean, winner?: boolean, stake?: number, winnableStake?: number, user?: User, connectedEvent?: Event, id?: number) {
+        this.active = active;
         this.winner = winner;
         this.stake = stake;
         this.winnableStake = winnableStake;
-        this.users = users;
+        this.user = user;
         this.connectedEvent = connectedEvent;
         this.id = id;
     }

@@ -6,9 +6,6 @@ import org.springframework.stereotype.Repository;
 
 import java.util.Optional;
 
-/**
- * @author Godzsák Dávid <godzsakdavid@gmail.com>
- */
 @Repository
 public interface UserRepository extends CrudRepository<User, Long> {
 

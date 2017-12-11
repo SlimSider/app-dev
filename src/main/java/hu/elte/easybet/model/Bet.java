@@ -7,6 +7,8 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table(name = "bets")
 @Data
@@ -15,11 +17,9 @@ import javax.persistence.*;
 //@EqualsAndHashCode(callSuper = true)
 public class Bet extends BaseEntity{
 
-    @Column(nullable = false)
-    private boolean active;
+    private Boolean active;
     
-    @Column(nullable = false)
-    private boolean winner;
+    private Boolean winner;
     
     @Column(nullable = false)
     private double stake;
@@ -27,13 +27,9 @@ public class Bet extends BaseEntity{
     @Column(nullable = false)
     private double winnableStake;
     
-    @ManyToMany(cascade = CascadeType.ALL)
-    @JoinTable(
-        name = "Bet_User", 
-        joinColumns = { @JoinColumn(name = "bets_id") }, 
-        inverseJoinColumns = { @JoinColumn(name = "users_id") }
-    )
-    private List<User> users;
+    @ManyToOne(optional=false)
+    @JoinColumn(name="users_id", referencedColumnName="id")
+    private User user;
     
     @ManyToOne(optional=false)
     @JoinColumn(name = "events_id", referencedColumnName = "id")

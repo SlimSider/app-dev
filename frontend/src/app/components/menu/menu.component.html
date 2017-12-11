@@ -16,7 +16,7 @@
 
     <div *ngIf="authService.isLoggedIn" class="authorized">
       <span *ngIf="authService.user.role==='USER'">Balance: {{authService.user.balance}} $</span>
-      <button mat-button (click)="authService.logout()">Logout</button>
+      <button mat-button (click)="logout()">Logout</button>
     </div>
   </div>
 </mat-toolbar>

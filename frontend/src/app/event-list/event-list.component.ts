@@ -23,18 +23,18 @@ export class EventListComponent implements OnInit {
   match: Match;
   id: number;
   events: Event[] = [];
-  amount: number;
-  ready: boolean;
-  selected: number;
+  logged: boolean;
 
   constructor(private authService: AuthService, private eventService: EventService,
               private matchService: MatchService, private route: ActivatedRoute,
-              private router: Router, private betService: BetService ) {
+              private router: Router, private betService: BetService) {
     this.user = authService.user;
     this.route.params.subscribe(
       params => this.id = params.id,
       err => console.log(err)
     )
+    this.logged = this.authService.isLoggedIn;
+    console.log(this.logged);
     this.eventService.getEvents().forEach(e=>e.forEach(ev=>{if(this.id==ev.match.id)this.events.push(ev)}));
   }
 
@@ -55,12 +55,11 @@ export class EventListComponent implements OnInit {
     )
   }
 
-  onReady(event) {
-    this.selected = event.value;   
-    this.ready = true;
-  }
-
-  onBet() {
+  onBet(event) {
+    if(!this.logged) {return;}
+    this.betService.event = this.events[event.value];
+    this.betService.selected = event.name;
+    console.log(this.betService.event);
     this.router.navigate(['bet/new']);
   }
 

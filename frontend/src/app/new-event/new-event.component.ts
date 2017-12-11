@@ -55,7 +55,6 @@ export class NewEventComponent implements OnInit {
      }
   
      submit() {
-      console.log("fafafafa");
        this.eventService.create(new Event(this.home.value, this.draw.value, this.away.value, true, this.type.value, this.match))
          .subscribe(
            res => {res; this.router.navigate(['/match']); console.log(res);},

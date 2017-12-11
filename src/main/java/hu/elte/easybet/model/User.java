@@ -36,7 +36,7 @@ public class User extends BaseEntity {
     private double balance;
 
     @JsonIgnore
-    @ManyToMany(mappedBy = "users", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy="user", cascade = CascadeType.ALL)
     private List<Bet> bets;
 
     public enum Role {
