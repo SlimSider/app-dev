@@ -35,6 +35,43 @@ Az oldal célja, hogy magas színvonalú játékot és vonzó fogadásokat kín�
 | Admin    | Kiírhat, lezárhat meccseket, eseményeket, illetve törtölheti és módosíthatja is azokat. |
 
 ## Könyvtárstruktúra (backend)
++ EasybetApplication.java
++ api
+    + BetApiController.java
+    + EventApiController.java
+    + MatchApiController.java
+    + UserApiController.java
++ config
+    + AuthInterceptor.java
++ controller
+    + BetController.java
+    + EventController.java
+    + MatchController.java
+    + UserController.java
++ model
+    + BaseEntity.java
+    + Bet.java
+    + Event.java
+    + Match.java
+    + User.java
++ repository
+    + BetRepository.java
+    + EventRepository.java
+    + MatchRepository.java
+    + UserRepository.java
++ service
+    + BetService.java
+    + EventService.java
+    + exceptions
+    + MatchService.java
+    + UserService.java
+    + annotations
+        + Role.java
+    + exceptions
+        + Error1.java
+        + UserNotValidException.java
++ utility
+    + Response.java
 
 ## Fejlesztői környezet
 + git verziókezelő telepítése
